@@ -1,17 +1,19 @@
+using CompaniesHouse.Extensions;
+using CompaniesHouse.Response.CompanyFiling;
+using CompaniesHouse.UriBuilders;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using CompaniesHouse.Response.CompanyFiling;
-using CompaniesHouse.UriBuilders;
+using CompaniesHouse.Response;
 
-namespace CompaniesHouse
+namespace CompaniesHouse.Implementation.Clients
 {
-    public class CompaniesHouseCompanyFilingHistoryClient : ICompaniesHouseCompanyFilingHistoryClient
+    internal class CompaniesHouseCompanyFilingHistoryClient
     {
         private readonly HttpClient _httpClient;
-        private readonly ICompanyFilingHistoryUriBuilder _companyFilingHistoryUriBuilder;
+        private readonly IListUriBuilder _companyFilingHistoryUriBuilder;
 
-        public CompaniesHouseCompanyFilingHistoryClient(HttpClient httpClient, ICompanyFilingHistoryUriBuilder companyFilingHistoryUriBuilder)
+        public CompaniesHouseCompanyFilingHistoryClient(HttpClient httpClient, IListUriBuilder companyFilingHistoryUriBuilder)
         {
             _httpClient = httpClient;
             _companyFilingHistoryUriBuilder = companyFilingHistoryUriBuilder;

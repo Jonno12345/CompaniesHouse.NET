@@ -1,4 +1,5 @@
 using CompaniesHouse.Request;
+using CompaniesHouse.Response;
 using CompaniesHouse.Response.Search.DisqualifiedOfficersSearch;
 using NUnit.Framework;
 

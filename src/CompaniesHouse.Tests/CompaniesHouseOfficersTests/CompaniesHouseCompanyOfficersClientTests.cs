@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Net.Http;
+using CompaniesHouse.Implementation.Clients;
+using CompaniesHouse.Response;
 using CompaniesHouse.Tests.ResourceBuilders;
 using CompaniesHouse.UriBuilders;
 using FluentAssertions;
@@ -27,7 +29,7 @@ namespace CompaniesHouse.Tests.CompaniesHouseOfficersTests
 
             HttpMessageHandler handler = new StubHttpMessageHandler(uri, resource);
 
-            var uriBuilder = new Mock<IOfficersUriBuilder>();
+            var uriBuilder = new Mock<IListUriBuilder>();
             uriBuilder.Setup(x => x.Build(It.IsAny<string>(), It.IsAny<int>(), It.IsAny<int>()))
                 .Returns(uri);
 

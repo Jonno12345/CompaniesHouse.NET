@@ -1,10 +1,10 @@
-﻿using System;
+﻿using CompaniesHouse.Constants;
+using System;
 
 namespace CompaniesHouse
 {
-    public class CompaniesHouseSettings : ICompaniesHouseSettings
+    public class CompaniesHouseSettings
     {
-
         public CompaniesHouseSettings(Uri baseUri, string apiKey)
         {
             BaseUri = baseUri;
@@ -12,7 +12,7 @@ namespace CompaniesHouse
         }
 
         public CompaniesHouseSettings(string apiKey)
-            :this(CompaniesHouseUris.Default, apiKey)
+            : this(CompaniesHouseUris.Default, apiKey)
         {
         }
 

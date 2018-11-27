@@ -2,7 +2,7 @@ using System.Net.Http;
 
 namespace CompaniesHouse
 {
-    public interface IHttpClientFactory
+    internal interface IHttpClientFactory
     {
         HttpClient CreateHttpClient();
     }

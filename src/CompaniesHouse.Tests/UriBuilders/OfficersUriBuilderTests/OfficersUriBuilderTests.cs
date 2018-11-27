@@ -6,7 +6,7 @@ namespace CompaniesHouse.Tests.UriBuilders.OfficersUriBuilderTests
 {
     public class OfficersUriBuilderTests
     {
-        private OfficersUriBuilder _uriBuilder;
+        private OfficersListUriBuilder listUriBuilder;
         private Uri _actualUri;
         private readonly Uri _baseUri = new Uri("http://liberis.co.uk/bla1/bla2/");
         private string _companyNumber;
@@ -17,7 +17,7 @@ namespace CompaniesHouse.Tests.UriBuilders.OfficersUriBuilderTests
         [OneTimeSetUp]
         public void GivenAUriBuilder()
         {
-            _uriBuilder = new OfficersUriBuilder();
+            listUriBuilder = new OfficersListUriBuilder();
         }
 
         [SetUp]
@@ -26,7 +26,7 @@ namespace CompaniesHouse.Tests.UriBuilders.OfficersUriBuilderTests
             _pageSize = 10;
             _startIndex = 5;
             _companyNumber = "123456789";
-            _actualUri = _uriBuilder.Build(_companyNumber, _startIndex, _pageSize);
+            _actualUri = listUriBuilder.Build(_companyNumber, _startIndex, _pageSize);
         }
 
         [Test]

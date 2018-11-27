@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 
 namespace CompaniesHouse.JsonConverters
 {
-    public class SearchItemConverter : JsonCreationConverter<SearchItem>
+    internal class SearchItemConverter : JsonCreationConverter<SearchItem>
     {
         protected override SearchItem Create(Type objectType, JObject jObject)
         {

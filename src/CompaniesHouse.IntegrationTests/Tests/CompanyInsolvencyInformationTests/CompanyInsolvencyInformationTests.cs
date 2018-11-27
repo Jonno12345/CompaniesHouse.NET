@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using CompaniesHouse.Response;
 using CompaniesHouse.Response.Insolvency;
 using NUnit.Framework;
 

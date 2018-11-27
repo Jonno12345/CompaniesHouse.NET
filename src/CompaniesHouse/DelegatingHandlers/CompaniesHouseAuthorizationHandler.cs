@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CompaniesHouse.DelegatingHandlers
 {
-    public class CompaniesHouseAuthorizationHandler : DelegatingHandler
+    internal class CompaniesHouseAuthorizationHandler : DelegatingHandler
     {
         private readonly string _apiKey;
 

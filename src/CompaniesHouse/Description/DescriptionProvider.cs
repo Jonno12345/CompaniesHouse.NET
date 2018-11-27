@@ -3,7 +3,7 @@ using Newtonsoft.Json.Linq;
 
 namespace CompaniesHouse.Description
 {
-    public class DescriptionProvider
+    internal class DescriptionProvider
     {
         private static readonly Regex _pattern = new Regex(@"({[a-zA-Z0-9.-_]*})");
 

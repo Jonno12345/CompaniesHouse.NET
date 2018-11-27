@@ -6,7 +6,7 @@ namespace CompaniesHouse.Tests.UriBuilders.CompanyFilingUriBuilderTests
 {
     public class CompanyFilingHistoryUriBuilderTests
     {
-        private CompanyFilingHistoryUriBuilder _uriBuilder;
+        private CompanyFilingHistoryListUriBuilder listUriBuilder;
         private Uri _actualUri;
         private readonly Uri _baseUri = new Uri("http://liberis.co.uk/bla1/bla2/");
         private string _companyNumber;
@@ -17,7 +17,7 @@ namespace CompaniesHouse.Tests.UriBuilders.CompanyFilingUriBuilderTests
         [OneTimeSetUp]
         public void GivenAUriBuilder()
         {
-            _uriBuilder = new CompanyFilingHistoryUriBuilder();
+            listUriBuilder = new CompanyFilingHistoryListUriBuilder();
         }
 
         [SetUp]
@@ -26,7 +26,7 @@ namespace CompaniesHouse.Tests.UriBuilders.CompanyFilingUriBuilderTests
             _pageSize = 10;
             _startIndex = 5;
             _companyNumber = "123456789";
-            _actualUri = _uriBuilder.Build(_companyNumber, _startIndex, _pageSize);
+            _actualUri = listUriBuilder.Build(_companyNumber, _startIndex, _pageSize);
         }
 
         [Test]

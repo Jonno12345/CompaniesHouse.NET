@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using CompaniesHouse.Implementation.Clients;
+using CompaniesHouse.Implementation.Interfaces;
 using CompaniesHouse.Request;
 using CompaniesHouse.Response;
 using CompaniesHouse.Response.Search.CompanySearch;

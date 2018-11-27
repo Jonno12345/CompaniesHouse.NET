@@ -1,17 +1,19 @@
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using CompaniesHouse.Extensions;
+using CompaniesHouse.Response;
 using CompaniesHouse.Response.Officers;
 using CompaniesHouse.UriBuilders;
 
-namespace CompaniesHouse
+namespace CompaniesHouse.Implementation.Clients
 {
-    public class CompaniesHouseOfficersClient : ICompaniesHouseOfficersClient
+    internal class CompaniesHouseOfficersClient
     {
         private readonly HttpClient _httpClient;
-        private readonly IOfficersUriBuilder _officersUriBuilder;
+        private readonly IListUriBuilder _officersUriBuilder;
 
-        public CompaniesHouseOfficersClient(HttpClient httpClient, IOfficersUriBuilder officersUriBuilder)
+        public CompaniesHouseOfficersClient(HttpClient httpClient, IListUriBuilder officersUriBuilder)
         {
             _httpClient = httpClient;
             _officersUriBuilder = officersUriBuilder;

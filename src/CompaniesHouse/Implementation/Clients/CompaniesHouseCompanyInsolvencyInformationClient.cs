@@ -1,11 +1,13 @@
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using CompaniesHouse.Extensions;
+using CompaniesHouse.Response;
 using CompaniesHouse.Response.Insolvency;
 
-namespace CompaniesHouse
+namespace CompaniesHouse.Implementation.Clients
 {
-    public class CompaniesHouseCompanyInsolvencyInformationClient : ICompaniesHouseCompanyInsolvencyInformationClient
+    internal class CompaniesHouseCompanyInsolvencyInformationClient
     {
         private readonly HttpClient _httpClient;
 

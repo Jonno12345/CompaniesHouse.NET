@@ -1,11 +1,14 @@
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using CompaniesHouse.Extensions;
+using CompaniesHouse.Implementation.Interfaces;
 using CompaniesHouse.Request;
+using CompaniesHouse.Response;
 
-namespace CompaniesHouse
+namespace CompaniesHouse.Implementation.Clients
 {
-    public class CompaniesHouseSearchClient : ICompaniesHouseSearchClient
+    internal class CompaniesHouseSearchClient 
     {
         private readonly HttpClient _httpClient;
         private readonly ISearchUriBuilderFactory _searchUriBuilderFactory;

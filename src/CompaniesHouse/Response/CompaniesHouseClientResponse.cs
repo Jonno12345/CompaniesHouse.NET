@@ -1,4 +1,4 @@
-namespace CompaniesHouse
+namespace CompaniesHouse.Response
 {
     public class CompaniesHouseClientResponse<T>
     {

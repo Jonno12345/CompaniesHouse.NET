@@ -1,12 +1,13 @@
-﻿using System;
-using System.Linq;
-using System.Net.Http;
+﻿using CompaniesHouse.Implementation.Clients;
 using CompaniesHouse.Tests.ResourceBuilders;
 using CompaniesHouse.UriBuilders;
 using FluentAssertions;
 using Moq;
 using NUnit.Framework;
-using CompanyFilingHistory = CompaniesHouse.Response.CompanyFiling.CompanyFilingHistory;
+using System;
+using System.Linq;
+using System.Net.Http;
+using CompaniesHouse.Response;
 
 namespace CompaniesHouse.Tests.CompaniesHouseCompanyFilingHistoryClientTests
 {
@@ -29,7 +30,7 @@ namespace CompaniesHouse.Tests.CompaniesHouseCompanyFilingHistoryClientTests
 
             HttpMessageHandler handler = new StubHttpMessageHandler(uri, resource);
 
-            var uriBuilder = new Mock<ICompanyFilingHistoryUriBuilder>();
+            var uriBuilder = new Mock<IListUriBuilder>();
             uriBuilder.Setup(x => x.Build(It.IsAny<string>(), It.IsAny<int>(), It.IsAny<int>()))
                 .Returns(uri);
 

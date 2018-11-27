@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using CompaniesHouse.Request;
+using CompaniesHouse.Response;
 using CompaniesHouse.Response.Search.AllSearch;
 using NUnit.Framework;
 

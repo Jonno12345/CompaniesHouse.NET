@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System;
 
 namespace CompaniesHouse.JsonConverters
 {
-    public class OptionalStringEnumConverter<T> : StringEnumConverter
+    internal class OptionalStringEnumConverter<T> : StringEnumConverter
 	{
 		private readonly T _defaultValue;
 

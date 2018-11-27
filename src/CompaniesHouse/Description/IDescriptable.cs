@@ -1,6 +1,6 @@
 ﻿namespace CompaniesHouse.Description
 {
-    public interface IDescriptable
+    internal interface IDescriptable
     {
         string GetDescription(string format);
     }

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using CompaniesHouse.Implementation.Clients;
+using CompaniesHouse.Implementation.Factories;
 using CompaniesHouse.Request;
 using CompaniesHouse.Response.CompanyFiling;
 using CompaniesHouse.Response.CompanyProfile;
@@ -12,27 +10,32 @@ using CompaniesHouse.Response.Search.CompanySearch;
 using CompaniesHouse.Response.Search.DisqualifiedOfficersSearch;
 using CompaniesHouse.Response.Search.OfficerSearch;
 using CompaniesHouse.UriBuilders;
+using System;
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
+using CompaniesHouse.Response;
 
 namespace CompaniesHouse
 {
     public class CompaniesHouseClient : ICompaniesHouseClient, IDisposable
     {
-        private readonly ICompaniesHouseSearchClient _companiesHouseSearchClient;
-        private readonly ICompaniesHouseCompanyProfileClient _companiesHouseCompanyProfileClient;
-        private readonly ICompaniesHouseCompanyFilingHistoryClient _companiesHouseCompanyFilingHistoryClient;
-        private readonly ICompaniesHouseOfficersClient _companiesHouseOfficersClient;
-        private readonly ICompaniesHouseCompanyInsolvencyInformationClient _companiesHouseCompanyInsolvencyInformationClient;
+        private readonly CompaniesHouseSearchClient _companiesHouseSearchClient;
+        private readonly CompaniesHouseCompanyProfileClient _companiesHouseCompanyProfileClient;
+        private readonly CompaniesHouseCompanyFilingHistoryClient _companiesHouseCompanyFilingHistoryClient;
+        private readonly CompaniesHouseOfficersClient _companiesHouseOfficersClient;
+        private readonly CompaniesHouseCompanyInsolvencyInformationClient _companiesHouseCompanyInsolvencyInformationClient;
         private readonly HttpClient _httpClient;
 
-        public CompaniesHouseClient(ICompaniesHouseSettings settings)
+        public CompaniesHouseClient(CompaniesHouseSettings settings)
         {
             var httpClientFactory = new HttpClientFactory(settings);
             _httpClient = httpClientFactory.CreateHttpClient();
 
             _companiesHouseSearchClient = new CompaniesHouseSearchClient(_httpClient, new SearchUriBuilderFactory());
             _companiesHouseCompanyProfileClient = new CompaniesHouseCompanyProfileClient(_httpClient, new CompanyProfileUriBuilder());
-            _companiesHouseCompanyFilingHistoryClient = new CompaniesHouseCompanyFilingHistoryClient(_httpClient, new CompanyFilingHistoryUriBuilder());
-            _companiesHouseOfficersClient = new CompaniesHouseOfficersClient(_httpClient, new OfficersUriBuilder());
+            _companiesHouseCompanyFilingHistoryClient = new CompaniesHouseCompanyFilingHistoryClient(_httpClient, new CompanyFilingHistoryListUriBuilder());
+            _companiesHouseOfficersClient = new CompaniesHouseOfficersClient(_httpClient, new OfficersListUriBuilder());
             _companiesHouseCompanyInsolvencyInformationClient = new CompaniesHouseCompanyInsolvencyInformationClient(_httpClient);
         }
 
@@ -75,6 +78,7 @@ namespace CompaniesHouse
         {
             return _companiesHouseCompanyInsolvencyInformationClient.GetCompanyInsolvencyInformationAsync(companyNumber, cancellationToken);
         }
+
 
         public void Dispose()
         {

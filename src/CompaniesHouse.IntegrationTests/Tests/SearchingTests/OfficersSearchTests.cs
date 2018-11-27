@@ -1,5 +1,6 @@
 using System;
 using CompaniesHouse.Request;
+using CompaniesHouse.Response;
 using CompaniesHouse.Response.Search.OfficerSearch;
 using NUnit.Framework;
 

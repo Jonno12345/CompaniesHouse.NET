@@ -2,7 +2,10 @@
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using CompaniesHouse.Implementation.Clients;
+using CompaniesHouse.Implementation.Interfaces;
 using CompaniesHouse.Request;
+using CompaniesHouse.Response;
 using CompaniesHouse.Response.Search.OfficerSearch;
 using CompaniesHouse.Tests.ResourceBuilders.OfficerSearchResource;
 using CompaniesHouse.UriBuilders;

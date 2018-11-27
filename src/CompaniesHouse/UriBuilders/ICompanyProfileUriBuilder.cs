@@ -2,7 +2,7 @@
 
 namespace CompaniesHouse.UriBuilders
 {
-    public interface ICompanyProfileUriBuilder
+    internal interface ICompanyProfileUriBuilder
     {
         Uri Build(string companyNumber);
     }

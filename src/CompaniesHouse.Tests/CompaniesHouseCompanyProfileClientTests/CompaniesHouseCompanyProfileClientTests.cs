@@ -1,12 +1,13 @@
-﻿using System;
-using System.Linq;
-using System.Net.Http;
+﻿using CompaniesHouse.Implementation.Clients;
 using CompaniesHouse.Tests.ResourceBuilders;
 using CompaniesHouse.UriBuilders;
 using FluentAssertions;
 using Moq;
 using NUnit.Framework;
-using CompanyProfile = CompaniesHouse.Response.CompanyProfile.CompanyProfile;
+using System;
+using System.Linq;
+using System.Net.Http;
+using CompaniesHouse.Response;
 
 namespace CompaniesHouse.Tests.CompaniesHouseCompanyProfileClientTests
 {
@@ -15,7 +16,7 @@ namespace CompaniesHouse.Tests.CompaniesHouseCompanyProfileClientTests
     {
         private CompaniesHouseCompanyProfileClient _client;
 
-        private CompaniesHouseClientResponse<Response.CompanyProfile.CompanyProfile> _result;
+        private  CompaniesHouseClientResponse<Response.CompanyProfile.CompanyProfile> _result;
         private ResourceBuilders.CompanyProfile _companyProfile;
 
         [TestCaseSource(nameof(TestCases))]

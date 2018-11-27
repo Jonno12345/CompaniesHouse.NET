@@ -1,14 +1,14 @@
-﻿using System.Net;
+﻿using CompaniesHouse.DelegatingHandlers;
+using System.Net;
 using System.Net.Http;
-using CompaniesHouse.DelegatingHandlers;
 
-namespace CompaniesHouse
+namespace CompaniesHouse.Implementation.Factories
 {
-    public class HttpClientFactory : IHttpClientFactory
+    internal class HttpClientFactory : IHttpClientFactory
     {
-        private readonly ICompaniesHouseSettings _settings;
+        private readonly CompaniesHouseSettings _settings;
 
-        public HttpClientFactory(ICompaniesHouseSettings settings)
+        public HttpClientFactory(CompaniesHouseSettings settings)
         {
             _settings = settings;
         }

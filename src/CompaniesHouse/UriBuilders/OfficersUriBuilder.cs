@@ -1,14 +1,7 @@
-﻿using System;
-
-namespace CompaniesHouse.UriBuilders
+﻿namespace CompaniesHouse.UriBuilders
 {
-    public class OfficersUriBuilder : IOfficersUriBuilder
+    internal class OfficersListUriBuilder : ListUriBuilder
     {
-        public Uri Build(string companyNumber, int startIndex, int pageSize)
-        {
-            var path = $"company/{Uri.EscapeDataString(companyNumber)}/officers?items_per_page={pageSize}&start_index={startIndex}";
-
-            return new Uri(path, UriKind.Relative);
-        }
+        protected override string BaseUri { get; } = "company/{0}/officers";
     }
 }

@@ -3,7 +3,7 @@ using CompaniesHouse.Request;
 
 namespace CompaniesHouse.UriBuilders
 {
-    public interface ISearchUriBuilder
+    internal interface ISearchUriBuilder
     {
         Uri Build(SearchRequest request);
     }

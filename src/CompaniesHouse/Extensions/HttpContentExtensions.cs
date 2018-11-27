@@ -3,9 +3,9 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace CompaniesHouse
+namespace CompaniesHouse.Extensions
 {
-    public static class HttpContentExtensions
+    internal static class HttpContentExtensions
     {
         public static async Task<T> ReadAsJsonAsync<T>(this HttpContent content)
         {

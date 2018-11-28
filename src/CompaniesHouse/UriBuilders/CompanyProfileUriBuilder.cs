@@ -1,14 +1,9 @@
-﻿using System;
+﻿using CompaniesHouse.UriBuilders.Base;
 
 namespace CompaniesHouse.UriBuilders
 {
-    internal class CompanyProfileUriBuilder : ICompanyProfileUriBuilder
+    internal class CompanyProfileUriBuilder : CompanyNumberUriBuilder
     {
-        public Uri Build(string companyNumber)
-        {
-            var path = "company/" + Uri.EscapeDataString(companyNumber);
-
-            return new Uri(path, UriKind.Relative);
-        }
+        protected override string BaseUri { get; } = "company/{0}";
     }
 }

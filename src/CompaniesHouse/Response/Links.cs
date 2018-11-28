@@ -1,6 +1,6 @@
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace CompaniesHouse.Response.Search.AllSearch
+namespace CompaniesHouse.Response
 {
     public class Links
     {

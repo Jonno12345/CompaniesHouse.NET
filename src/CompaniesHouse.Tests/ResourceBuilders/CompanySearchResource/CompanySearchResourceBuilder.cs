@@ -58,7 +58,7 @@ namespace CompaniesHouse.Tests.ResourceBuilders.CompanySearchResource
          ""date_of_creation"" : ""{companyDetails.DateOfCreation.ToString("yyyy-MM-dd")}"",
          ""description"" : ""{companyDetails.Description}"",
          ""description_identifier"" : [
-            null
+            ""closed""
          ],
          ""kind"" : ""{companyDetails.Kind}"",
          ""links"" : {{
@@ -99,7 +99,7 @@ namespace CompaniesHouse.Tests.ResourceBuilders.CompanySearchResource
          ""date_of_creation"" : ""{companyDetails.DateOfCreation.ToString("yyyy-MM-dd")}"",
          ""description"" : ""{companyDetails.Description}"",
          ""description_identifier"" : [
-            null
+            ""closed""
          ],
          ""kind"" : ""{companyDetails.Kind}"",
          ""links"" : {{

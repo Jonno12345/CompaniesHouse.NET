@@ -1,6 +1,6 @@
 using System.Net.Http;
 
-namespace CompaniesHouse
+namespace CompaniesHouse.Factories
 {
     internal interface IHttpClientFactory
     {

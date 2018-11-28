@@ -1,5 +1,3 @@
-using System;
-
 namespace CompaniesHouse.IntegrationTests
 {
     public static class Keys

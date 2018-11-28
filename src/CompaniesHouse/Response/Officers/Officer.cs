@@ -13,7 +13,7 @@ namespace CompaniesHouse.Response.Officers
         public DateTime? ResignedOn { get; set; }
 
         [JsonProperty(PropertyName = "date_of_birth")]
-        public OfficerDateOfBirth DateOfBirth { get; set; }
+        public DateOfBirth DateOfBirth { get; set; }
 
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }

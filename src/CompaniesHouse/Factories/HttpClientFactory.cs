@@ -1,8 +1,8 @@
-﻿using CompaniesHouse.DelegatingHandlers;
-using System.Net;
+﻿using System.Net;
 using System.Net.Http;
+using CompaniesHouse.DelegatingHandlers;
 
-namespace CompaniesHouse.Implementation.Factories
+namespace CompaniesHouse.Factories
 {
     internal class HttpClientFactory : IHttpClientFactory
     {

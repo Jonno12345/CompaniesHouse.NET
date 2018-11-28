@@ -1,6 +1,4 @@
-﻿using CompaniesHouse.Implementation.Clients;
-using CompaniesHouse.Implementation.Factories;
-using CompaniesHouse.Request;
+﻿using CompaniesHouse.Request;
 using CompaniesHouse.Response.CompanyFiling;
 using CompaniesHouse.Response.CompanyProfile;
 using CompaniesHouse.Response.Insolvency;
@@ -14,7 +12,10 @@ using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using CompaniesHouse.Clients;
+using CompaniesHouse.Factories;
 using CompaniesHouse.Response;
+using CompaniesHouse.Response.PersonsWithSignificantControl;
 
 namespace CompaniesHouse
 {
@@ -25,6 +26,7 @@ namespace CompaniesHouse
         private readonly CompaniesHouseCompanyFilingHistoryClient _companiesHouseCompanyFilingHistoryClient;
         private readonly CompaniesHouseOfficersClient _companiesHouseOfficersClient;
         private readonly CompaniesHouseCompanyInsolvencyInformationClient _companiesHouseCompanyInsolvencyInformationClient;
+        private readonly CompaniesHousePersonsWithSignificantControlClient _companiesHousePersonsWithSignificantControlClient;
         private readonly HttpClient _httpClient;
 
         public CompaniesHouseClient(CompaniesHouseSettings settings)
@@ -36,7 +38,8 @@ namespace CompaniesHouse
             _companiesHouseCompanyProfileClient = new CompaniesHouseCompanyProfileClient(_httpClient, new CompanyProfileUriBuilder());
             _companiesHouseCompanyFilingHistoryClient = new CompaniesHouseCompanyFilingHistoryClient(_httpClient, new CompanyFilingHistoryListUriBuilder());
             _companiesHouseOfficersClient = new CompaniesHouseOfficersClient(_httpClient, new OfficersListUriBuilder());
-            _companiesHouseCompanyInsolvencyInformationClient = new CompaniesHouseCompanyInsolvencyInformationClient(_httpClient);
+            _companiesHouseCompanyInsolvencyInformationClient = new CompaniesHouseCompanyInsolvencyInformationClient(_httpClient, new CompanyInsolvencyInformationUriBuilder());
+            _companiesHousePersonsWithSignificantControlClient = new CompaniesHousePersonsWithSignificantControlClient(_httpClient, new PersonsWithSignificantControlListUriBuilder());
         }
 
         public Task<CompaniesHouseClientResponse<CompanySearch>> SearchCompanyAsync(SearchRequest request, CancellationToken cancellationToken = default(CancellationToken))
@@ -77,6 +80,13 @@ namespace CompaniesHouse
         public Task<CompaniesHouseClientResponse<CompanyInsolvencyInformation>> GetCompanyInsolvencyInformationAsync(string companyNumber, CancellationToken cancellationToken = default(CancellationToken))
         {
             return _companiesHouseCompanyInsolvencyInformationClient.GetCompanyInsolvencyInformationAsync(companyNumber, cancellationToken);
+        }
+
+        public Task<CompaniesHouseClientResponse<PersonsWithSignificantControl>> GetPersonsWithSignificantControlAsync(
+            string companyNumber, int? startIndex, int? pageSize, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return _companiesHousePersonsWithSignificantControlClient.GetPersonsWithSignificantControlAsync(companyNumber, startIndex, pageSize,
+                cancellationToken);
         }
 
 

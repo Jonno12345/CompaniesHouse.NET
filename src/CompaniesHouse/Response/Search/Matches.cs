@@ -1,15 +1,13 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 
-namespace CompaniesHouse.Response.Search.OfficerSearch
+namespace CompaniesHouse.Response.Search
 {
-    public class Match
+    public class Matches
     {
         [JsonProperty(PropertyName = "address_snippet")]
-        public int[] AddressSnippet { get; set; }
-
+        public string[] AddressSnippet { get; set; }
         [JsonProperty(PropertyName = "snippet")]
-        public int[] Snippet { get; set; }
-
+        public string[] Snippet { get; set; }
         [JsonProperty(PropertyName = "title")]
         public int[] Title { get; set; }
     }

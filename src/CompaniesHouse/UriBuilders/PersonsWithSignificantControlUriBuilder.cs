@@ -1,4 +1,4 @@
-﻿using System;
+﻿using CompaniesHouse.UriBuilders.Base;
 
 namespace CompaniesHouse.UriBuilders
 {

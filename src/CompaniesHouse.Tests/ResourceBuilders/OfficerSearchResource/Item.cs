@@ -1,4 +1,6 @@
-﻿namespace CompaniesHouse.Tests.ResourceBuilders.OfficerSearchResource
+﻿using CompaniesHouse.Response;
+
+namespace CompaniesHouse.Tests.ResourceBuilders.OfficerSearchResource
 {
     public class Item
     {
@@ -12,7 +14,7 @@
 
         public Address Address { get; set; }
 
-        public string[] DescriptionIdentifiers { get; set; }
+        public DescriptionIdentifier[] DescriptionIdentifiers { get; set; }
 
         public int AppointmentCount { get; set; }
 

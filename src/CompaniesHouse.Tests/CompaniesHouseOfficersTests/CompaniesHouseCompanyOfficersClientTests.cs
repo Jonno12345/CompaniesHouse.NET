@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Net.Http;
-using CompaniesHouse.Implementation.Clients;
+using CompaniesHouse.Clients;
 using CompaniesHouse.Response;
 using CompaniesHouse.Tests.ResourceBuilders;
 using CompaniesHouse.UriBuilders;
+using CompaniesHouse.UriBuilders.Base;
 using FluentAssertions;
 using Moq;
 using NUnit.Framework;

@@ -1,14 +1,13 @@
 ﻿using System;
 
-namespace CompaniesHouse.UriBuilders
+namespace CompaniesHouse.UriBuilders.Base
 {
-    internal abstract class ListUriBuilder : IListUriBuilder
+    internal abstract class ListUriBuilder : CompanyNumberUriBuilder, IListUriBuilder
     {
-        protected abstract string BaseUri { get; }
-
         public Uri Build(string companyNumber, int? startIndex, int? pageSize)
         {
-            var path = string.Format(BaseUri, Uri.EscapeDataString(companyNumber));
+            var uri = Build(companyNumber).ToString();
+
             var queryString = "?";
             if (pageSize.HasValue)
             {
@@ -20,9 +19,9 @@ namespace CompaniesHouse.UriBuilders
                 queryString += $"start_index={startIndex}&";
             }
 
-            path += queryString.Remove(queryString.Length - 1);
+            uri += queryString.Remove(queryString.Length - 1);
 
-            return new Uri(path, UriKind.Relative);
+            return new Uri(uri, UriKind.Relative);
         }
     }
 }

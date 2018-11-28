@@ -1,5 +1,4 @@
-﻿using CompaniesHouse.Implementation.Clients;
-using CompaniesHouse.Tests.ResourceBuilders;
+﻿using CompaniesHouse.Tests.ResourceBuilders;
 using CompaniesHouse.UriBuilders;
 using FluentAssertions;
 using Moq;
@@ -7,7 +6,9 @@ using NUnit.Framework;
 using System;
 using System.Linq;
 using System.Net.Http;
+using CompaniesHouse.Clients;
 using CompaniesHouse.Response;
+using CompaniesHouse.UriBuilders.Base;
 
 namespace CompaniesHouse.Tests.CompaniesHouseCompanyFilingHistoryClientTests
 {

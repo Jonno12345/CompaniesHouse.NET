@@ -1,4 +1,6 @@
-﻿namespace CompaniesHouse.UriBuilders
+﻿using CompaniesHouse.UriBuilders.Base;
+
+namespace CompaniesHouse.UriBuilders
 {
     internal class OfficersListUriBuilder : ListUriBuilder
     {

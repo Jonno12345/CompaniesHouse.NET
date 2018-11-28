@@ -1,5 +1,4 @@
 ﻿using CompaniesHouse.JsonConverters;
-using CompaniesHouse.Response.Search.CompanySearch;
 using Newtonsoft.Json;
 
 namespace CompaniesHouse.Response.Search
@@ -12,5 +11,17 @@ namespace CompaniesHouse.Response.Search
 
         [JsonProperty(PropertyName = "links")]
         public Links Links { get; set; }
+
+        [JsonProperty(PropertyName = "matches")]
+        public Matches Matches { get; set; }
+
+        [JsonProperty(PropertyName = "snippet")]
+        public string Snippet { get; set; }
+
+        [JsonProperty(PropertyName = "title")]
+        public string Title { get; set; }
+
+        [JsonProperty(PropertyName = "description")]
+        public string Description { get; set; }
     }
 }

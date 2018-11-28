@@ -28,19 +28,7 @@ namespace CompaniesHouse.Response.Search.CompanySearch
         [JsonProperty(PropertyName = "date_of_creation")]
         public DateTime? DateOfCreation { get; set; }
 
-        [JsonProperty(PropertyName = "description")]
-        public string Description { get; set; }
-
         [JsonProperty(PropertyName = "description_identifier")]
-        public object[] DescriptionIdentifier { get; set; }
-
-        [JsonProperty(PropertyName = "matches")]
-        public Matches Matches { get; set; }
-
-        [JsonProperty(PropertyName = "snippet")]
-        public string Snippet { get; set; }
-
-        [JsonProperty(PropertyName = "title")]
-        public string Title { get; set; }
+        public DescriptionIdentifier[] DescriptionIdentifier { get; set; }
     }
 }

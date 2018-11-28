@@ -1,6 +1,6 @@
 using CompaniesHouse.UriBuilders;
 
-namespace CompaniesHouse.Implementation.Interfaces
+namespace CompaniesHouse.Factories
 {
     internal interface ISearchUriBuilderFactory
     {

@@ -14,19 +14,7 @@ namespace CompaniesHouse.Response.Search.DisqualifiedOfficersSearch
         [JsonProperty(PropertyName = "date_of_birth")]
         public DateTime DateOfBirth { get; set; }
 
-        [JsonProperty(PropertyName = "description")]
-        public string Description { get; set; }
-
-        [JsonProperty(PropertyName = "description_identifiers")]
-        public string[] DescriptionIdentifiers { get; set; }
-
-        [JsonProperty(PropertyName = "matches")]
-        public Match Matches { get; set; }
-
-        [JsonProperty(PropertyName = "snippet")]
-        public string Snippet { get; set; }
-
-        [JsonProperty(PropertyName = "title")]
-        public string Title { get; set; }
+        [JsonProperty(PropertyName = "description_identifier")]
+        public DescriptionIdentifier[] DescriptionIdentifier { get; set; }
     }
 }

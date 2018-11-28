@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CompaniesHouse.UriBuilders
+namespace CompaniesHouse.UriBuilders.Base
 {
     internal interface IListUriBuilder
     {

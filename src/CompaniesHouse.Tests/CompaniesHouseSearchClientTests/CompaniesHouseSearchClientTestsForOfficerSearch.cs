@@ -2,8 +2,8 @@
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using CompaniesHouse.Implementation.Clients;
-using CompaniesHouse.Implementation.Interfaces;
+using CompaniesHouse.Clients;
+using CompaniesHouse.Factories;
 using CompaniesHouse.Request;
 using CompaniesHouse.Response;
 using CompaniesHouse.Response.Search.OfficerSearch;
@@ -29,6 +29,7 @@ namespace CompaniesHouse.Tests.CompaniesHouseSearchClientTests
             var fixture = new Fixture();
             var items = fixture.Build<Item>()
                 .With(x => x.Kind, "searchresults#officer")
+                .With(x => x.DescriptionIdentifiers, new[] { DescriptionIdentifier.Closed})
                 .CreateMany().ToArray();
             _resourceDetails = fixture.Build<ResourceDetails>()
                 .With(x => x.Officers, items)
